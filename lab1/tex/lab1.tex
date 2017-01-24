@@ -2,80 +2,124 @@
 
 \begin{document}
 
-\section{Wave Form Generator} 
+\section{Wave Form Generator}
 \label{sec:wave_form_generator}
 
 Wave form generators are electrical devices that generate an electrical output
 signal of a defined pattern - sinusoidal, square, etc. A wave form generator has
-multiple properties for configuring the output as follows: 
+multiple properties for configuring the output as follows:
 
 \begin{itemize}
-\item \textbf{Output type}. This allows the user to switch between sine, square, pulse,
-	and other output wave forms. 
-\item \textbf{Peak-to-peak voltage}. The waveform generator has a high-impedance circuit
-	that doubles the amplitude of the waveform output. Therefore the user must set
-	the output voltage in the waveform generator as the peak-to-peak voltage to
-	compensate for this modified output.
-\item \textbf{Output frequency}. The output frequency can be set in terms of
-	hertz.
+	\item \textbf{Output type}. This allows the user to switch between sine, square, pulse,
+		and other output wave forms.
+	\item \textbf{Peak-to-peak voltage}. The waveform generator has a high-impedance circuit
+		that doubles the amplitude of the waveform output. Therefore the user must set
+		the output voltage in the waveform generator as the peak-to-peak voltage to
+		compensate for this modified output.
+	\item \textbf{Output frequency}. The output frequency can be set in terms of
+		hertz.
 \end{itemize}
 
-\section{Sample Waveform Generator Settings} 
+\section{Sample Waveform Generator Settings}
 \label{sec:sample_waveform_generator_settings}
 
-For a wave of the form $5\sin({120{\pi}t})$ that is connected to a high-impedance
-load of $1\texttt{M}\Omega$ the ideal and real settings of the waveform-generator
+Consider a wave shown in \eqref{sampleWave} that is connected to a high-impedance
+load of $1\texttt{M}\Omega$. The ideal and real settings of the waveform-generator
 are shown in \tabref{genSettings}.
 
-\begin{table}[H]
-  \begin{center}
-    \caption{Sample Waveform Generator Settings}
-    \label{tab:genSettings}
-    \begin{tabular}{llcc}
-      \\ \toprule
+\begin{equation}
+	\label{eq:sampleWave}
+	y = 5\sin({120{\pi}t}) 
+\end{equation}
+
+\begin{table}[h]
+	\begin{center}
+		\caption{Sample Waveform Generator Settings}
+		\label{tab:genSettings}
+		\begin{tabular}{llcc}
+			\\ \toprule
 			Output type & Amplitude ($\texttt{V}$) & Frequency ($\texttt{Hz}$) & Phase
 			Shift
-      \\ \midrule
+			\\ \midrule
 			Ideal & $5$ (not peak-to-peak) & $60$ & 0
 			\\ Real  & $5$ (peak-to-peak) & $60$ & 0
-      \\ \bottomrule
-    \end{tabular}
-  \end{center}
+			\\ \bottomrule
+		\end{tabular}
+	\end{center}
 \end{table}
 
 % section sample_waveform_generator_settings (end)
 
 % section wave_form_generator (end)
 
-\section{Oscilloscopes} 
+\section{Oscilloscopes}
 \label{sec:oscilloscope}
 
 Oscilloscopes are tools used to visualize an electric signal. Typically they
 allow multiple signals to be visualized at the same time, and modifications to
 the display such as the time scale, the wave amplitude scale, the sampling
 frequency, and the signal triggering methods. The oscilloscopes that we will be
-using have other features such as computing analytical properties of an input
+using has other features such as computing analytical properties of an input
 waveform, and saving the display as an image. Below are details of each of the
-features of an oscilloscope: 
+features of an oscilloscope:
 
 \begin{itemize}
-		\item \textbf{Channel selection}. There are four input channels to select
-			from, each with independent property controls (amplitude, time scale,
-			etc).
-		\item \textbf{Time scale}. This modifies the x-axis scale of the waveform
-			plot. Typically this is adjusted to show only $1-2$ cycles of the input waveform.
-		\item \textbf{Signal triggering}. This enables 
+	\item \textbf{Time scale}. This modifies the x-axis scale of the waveform
+		plot. Typically this is adjusted to show only $1-2$ cycles of the input waveform.
+	\item \textbf{Signal triggering}. This sets the mechanism for how the
+		oscilloscope detects the signal and rendering timing. Typically this is
+		adjusted such that the input signal will be "stable" - that is not moving
+		sideways on the screen.
+	\item \textbf{Image Saving}. The digital oscilloscope also has the ability
+		to save a display to a file on a USB drive. The rendered image can be in
+		two forms: non-contrast (white background, normal colors)  or contrast
+		(black background with inverted colors). \figref{sampleImage} shows a sample
+		image saved from the oscilloscope.
+
+		\begin{figure}[!t]
+			\centering
+			\includegraphics[width=.75\linewidth]{lab1.jpg}
+			\caption{Sample Saved Oscilloscope Image}
+			\label{fig:sampleImage}
+		\end{figure}
+
+	\item \textbf{Noise filtering}. The oscilloscope includes a Low-pass filter
+		and signal averaging functions that are used to filter out noise in the
+		incoming signal, this is used to clean up a bit of the signal that is
+		displayed.
+	\item \textbf{Measuring Tools}. The digital oscilloscope used in the lab has
+		the ability to measure analytical properties of a waveform. Such as wave
+		amplitude (both regular and peak-to-peak), period, frequency, etc. Measured
+		properties of the generated wave in \eqref{sampleWave} is shown in
+		\tabref{measuredProp}
+
+		\begin{table}[H]
+			\begin{center}
+				\caption{Measured Properties of Sample Wave}
+				\label{tab:measuredProp}
+				\begin{tabular}{ll}
+					\\ \toprule
+					Property & Value 
+					\\ \midrule
+					Frequency & $59.9\texttt{Hz}$
+					\\Peak-to-Peak & $9.93\texttt{V}$
+					\\Minimum Voltage & $4.94\texttt{V}$
+					\\Maximum Voltage & $9.93\texttt{V}$
+					\\ \bottomrule
+				\end{tabular}
+			\end{center}
+		\end{table}
+
 \end{itemize}
 
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=\linewidth]{lab1.jpg}
-	\end{center}
-	\caption{Sample Saved Oscilloscope Image}
-	\label{fig:sampleImage}
-\end{figure}
-
 % section oscilloscope (end)
+
+\section{Conclusion} 
+\label{sec:conclusion}
+
+In this lab we played with the measuring features provided by the oscilloscope
+with input directly from a waveform generator. The user interface is intuitive
+enough for working in the lab this semester.
+% section conclusion (end)
 
 \end{document}
