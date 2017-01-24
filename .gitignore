@@ -236,3 +236,4 @@ CTestTestfile.cmake
 
 build/
 *.sw*
+pdf/
