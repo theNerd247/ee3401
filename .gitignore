@@ -235,3 +235,4 @@ CTestTestfile.cmake
 #
 
 build/
+*.sw*

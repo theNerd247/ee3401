@@ -1,0 +1,2 @@
+lab1/img/lab1.jpg filter=lfs diff=lfs merge=lfs -text
+lab1/img/lab1.bmp filter=lfs diff=lfs merge=lfs -text

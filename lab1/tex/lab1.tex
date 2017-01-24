@@ -1,0 +1,81 @@
+\documentclass[main.tex]{subfile}
+
+\begin{document}
+
+\section{Wave Form Generator} 
+\label{sec:wave_form_generator}
+
+Wave form generators are electrical devices that generate an electrical output
+signal of a defined pattern - sinusoidal, square, etc. A wave form generator has
+multiple properties for configuring the output as follows: 
+
+\begin{itemize}
+\item \textbf{Output type}. This allows the user to switch between sine, square, pulse,
+	and other output wave forms. 
+\item \textbf{Peak-to-peak voltage}. The waveform generator has a high-impedance circuit
+	that doubles the amplitude of the waveform output. Therefore the user must set
+	the output voltage in the waveform generator as the peak-to-peak voltage to
+	compensate for this modified output.
+\item \textbf{Output frequency}. The output frequency can be set in terms of
+	hertz.
+\end{itemize}
+
+\section{Sample Waveform Generator Settings} 
+\label{sec:sample_waveform_generator_settings}
+
+For a wave of the form $5\sin({120{\pi}t})$ that is connected to a high-impedance
+load of $1\texttt{M}\Omega$ the ideal and real settings of the waveform-generator
+are shown in \tabref{genSettings}.
+
+\begin{table}[H]
+  \begin{center}
+    \caption{Sample Waveform Generator Settings}
+    \label{tab:genSettings}
+    \begin{tabular}{llcc}
+      \\ \toprule
+			Output type & Amplitude ($\texttt{V}$) & Frequency ($\texttt{Hz}$) & Phase
+			Shift
+      \\ \midrule
+			Ideal & $5$ (not peak-to-peak) & $60$ & 0
+			\\ Real  & $5$ (peak-to-peak) & $60$ & 0
+      \\ \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+% section sample_waveform_generator_settings (end)
+
+% section wave_form_generator (end)
+
+\section{Oscilloscopes} 
+\label{sec:oscilloscope}
+
+Oscilloscopes are tools used to visualize an electric signal. Typically they
+allow multiple signals to be visualized at the same time, and modifications to
+the display such as the time scale, the wave amplitude scale, the sampling
+frequency, and the signal triggering methods. The oscilloscopes that we will be
+using have other features such as computing analytical properties of an input
+waveform, and saving the display as an image. Below are details of each of the
+features of an oscilloscope: 
+
+\begin{itemize}
+		\item \textbf{Channel selection}. There are four input channels to select
+			from, each with independent property controls (amplitude, time scale,
+			etc).
+		\item \textbf{Time scale}. This modifies the x-axis scale of the waveform
+			plot. Typically this is adjusted to show only $1-2$ cycles of the input waveform.
+		\item \textbf{Signal triggering}. This enables 
+\end{itemize}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\linewidth]{lab1.jpg}
+	\end{center}
+	\caption{Sample Saved Oscilloscope Image}
+	\label{fig:sampleImage}
+\end{figure}
+
+% section oscilloscope (end)
+
+\end{document}
